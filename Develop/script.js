@@ -4,6 +4,8 @@ function onload (){
     console.log(container)
 
     container.appendChild(btn)
+    var newContent = document.createTextNode("Start Quiz");
+    btn.appendChild(newContent);
 
 }
 document.addEventListener("DOMContentLoaded", onload)
