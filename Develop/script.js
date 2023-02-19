@@ -1,6 +1,12 @@
+var points = 0
+
 function startQuiz() {
     var container = document.getElementById("div1");
     removeAllChildNodes(container)
+    var btn = document.createElement("button")
+    var newContent = document.createTextNode("placeholder answer")
+    btn.appendChild(newContent);
+    btn.addEventListener("click")
 
 }
 
@@ -9,6 +15,22 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+function secondQuestion() {
+    
+    var newContent = 
+}
+
+function thirdQuestion() {
+
+}
+
+function rightAnswer() {
+    points += 1     
+}
+
+function wrongAnswer() {
+    points += 0
+} 
 
 function onload() {
     var btn = document.createElement("button");
