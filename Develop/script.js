@@ -89,7 +89,11 @@ function generateQuestion(){
     buttonC.innerHTML = currentQuestion.optionC;
     buttonD.innerHTML = currentQuestion.optionD;
 }
-
+function startQuiz(){
+    gameOver.style.display = "none";
+    beginQuiz.style.display = "none";
+    generateQuestion();
+}
 
 
 
