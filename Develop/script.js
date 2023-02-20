@@ -174,7 +174,7 @@ function generateHighScores(){
 
     }
 }
-
+// This function here shows the high score page while making all other content disappear on the webpage   
 function showHighScore(){
     startQuiz.style.display = "none";
     gameOver.style.display = "none";
@@ -183,5 +183,14 @@ function showHighScore(){
     endGameButton.style.display = "flex";
 
     generateHighScores();
+}
+// This is function is creating a replay button so the quiz can start again
+function replay(){
+    highScoreCont = "none";
+    gameOver.style.display = "none";
+    startQuiz.style.display = "flex";
+    time = 100;
+    points = 0;
+    currentQuestion = 0;
 }
 
