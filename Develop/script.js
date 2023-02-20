@@ -133,19 +133,32 @@ function checkAnswer(answer){
     }
     }
 
-    if(highScoreDisplayName.value === "") {
-        alert("Name cannot be blank");
-        return false;
-    }else{
-        var savedHighScores = Json.parse(localStorage.getItem("savedHighsScores")) || [];
-        var currentUser = highScoreDisplayName.value.trim();
-        var currentHighScore = {
-            name : currentUser,
-            score : Score
-        };
+    submitScorebutton.addEventListener("click", function highScore(){
 
         
+        if(highScoreDisplayName.value === "") {
+            alert("Name cannot be blank");
+            return false;
+        }else{
+            var savedHighScores = JSON.parse(localStorage.getItem("savedHighsScores")) || [];
+            var currentUser = highScoreDisplayName.value.trim();
+            var currentHighScore = {
+                name : currentUser,
+                score : Score
+            };
+    
+            gameOver.style.display = "none";
+            highScoreCont.style.display = "flex";
+            highScoreDiv.style.display = "block";
+            endGameButton.style.display = "flex";
+    
+            savedHighScores.push(currentHighScore);
+            localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores)); 
+            generateHighscores();
 
-    }
+        }
+
+    });
+
 
 
