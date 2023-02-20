@@ -17,10 +17,9 @@ For this week's challenge I'm expected to create a webpage that contains a timed
 * THEN I can save my initials and score
 
 ## Work Completed 
-* Created "Start Quiz" button
-* Created "High Score" button
-* 
-
+* Created Clickable buttons throughout my website 
+* Created a field where users can submit their name for their high score to be displayed on that page once quiz is completed 
+* Created 
 ## Website 
 
 ## Contact 
