@@ -106,13 +106,13 @@ function startQuiz(){
     }, 1000);
     Quiz.style.display = "block";
 }
-// Here we have the score being showcased on our website after the quiz being completed or times runs out 
+// Here we have the score being showcased on our website after the quiz has been completed or times runs out 
 function showScore() {
     Quiz.style.display = "none";
     gameOver.style.display = "flex";
     clearInterval(timer);
     highScoreDisplayName.value = "";
-    Score.innerHTML = "You got" + score + " out of" + Questions.length + " correct!";
+    Score.innerHTML = "You got" + Score + " out of" + Questions.length + " correct!";
 }
 // This function checks answer the user chooses
 function checkAnswer(answer){
@@ -154,9 +154,22 @@ submitScorebutton.addEventListener("click", function highScore(){
     
             savedHighScores.push(currentHighScore);
             localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores)); 
-            generateHighscores();
-
+            generateHighScores();
         }
 
-    });
+});
+// Here this function will be for generating a new list in the local storage on the webpage 
+function generateHighScores(){
+    highScoreDisplayName.innerHTML = "";
+    DisplayScore.innerHTML = "";
+    var highscores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+    for (i=0; i<highscores.length; i++){
+        var newNameSpan = document.createElement("li");
+        var newScoreSpan = document.createElement("li");
+        newNameSpan.textContent = highscores[i].name;
+        newScoreSpan.textContent = highscores[i].score;
+        highScoreDisplayName.appendChild(newNameSpan);
+        DisplayScore.appendChild(newScoreSpan); 
 
+    }
+}
