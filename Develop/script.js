@@ -169,7 +169,19 @@ function generateHighScores(){
         newNameSpan.textContent = highscores[i].name;
         newScoreSpan.textContent = highscores[i].score;
         highScoreDisplayName.appendChild(newNameSpan);
-        DisplayScore.appendChild(newScoreSpan); 
+        DisplayScore.appendChild(newScoreSpan);
+         
 
     }
 }
+
+function showHighScore(){
+    startQuiz.style.display = "none";
+    gameOver.style.display = "none";
+    highScoreCont.style.display = "flex";
+    highScoreDiv.style.display = "block";
+    endGameButton.style.display = "flex";
+
+    generateHighScores();
+}
+
