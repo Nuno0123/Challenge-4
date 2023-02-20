@@ -115,6 +115,37 @@ function showScore() {
     Score.innerHTML = "You got" + score + " out of" + Questions.length + " correct!";
 }
 
+function checkAnswer(answer){
+    correct = Questions[currentQuestion].correctAnswer;
 
+    if (answer === correct && currentQuestion !== finalQuestion){
+        score++;
+        alert("Correct!");
+        currentQuestion++;
+        generateQuestion();
+    }else if (answer !== correct && currentQuestion !== finalQuestion){
+        alert("Incorrect!")
+        currentQuestion++;
+        generateQuestion();
+
+    }else{
+        showScore
+    }
+    }
+
+    if(highScoreDisplayName.value === "") {
+        alert("Name cannot be blank");
+        return false;
+    }else{
+        var savedHighScores = Json.parse(localStorage.getItem("savedHighsScores")) || [];
+        var currentUser = highScoreDisplayName.value.trim();
+        var currentHighScore = {
+            name : currentUser,
+            score : Score
+        };
+
+        
+
+    }
 
 
