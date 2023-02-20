@@ -10,16 +10,32 @@
   </head>
    
   <body>
-    <div class="containter">
+        <div class="containter">
 
-        <div id="startquiz">
-            <h2>The following quiz will test your coding and web design skills</h2>
+            <div id="startquiz">
+                <h2>The following quiz will test your coding and web design skills</h2>
+            <button id="startbutton">Start Quiz</button>
+            <button id="ViewHighScore" onclick="ShowHighScore()">High Scores</button>   
+            </div>
 
-        <button id="startbutton">Start Quiz</button>
-        <button id="ViewHighScore" onclick="ShowHighScore()">High Scores</button>   
-</div>
-        </div>
-      <script src="./Develop/script.js"></script>
-  </body>
-  </html>
+            <div id="quiz">
+                <div id="timer">Time left:</div>
+                <div id="results"></div>
+            </div>
+
+            <div id="gameOver">
+                <div id="finalScore"></div>
+            </div>
+
+            <div id=highScoreContainer>
+            <div id="high-score"></div>
+            </div>
+
+            <div id="endGameButtons">
+                <button id="playAgain">Play Again</button>
+            </div>
+    
+        <script src="./Develop/script.js"></script>
+    </body>
+ </html>
 

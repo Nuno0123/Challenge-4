@@ -17,6 +17,8 @@ For this week's challenge I'm expected to create a webpage that contains a timed
 * THEN I can save my initials and score
 
 ## Work Completed 
+* Created "Start Quiz" button along with making it disapper after clicking it
+* 
 
 ## Website 
 
