@@ -89,10 +89,30 @@ function generateQuestion(){
     buttonC.innerHTML = currentQuestion.optionC;
     buttonD.innerHTML = currentQuestion.optionD;
 }
+
 function startQuiz(){
     gameOver.style.display = "none";
     beginQuiz.style.display = "none";
     generateQuestion();
+
+    timer = setInterval(function() {
+        time--;
+        quizTimer.textContent = "Remaining Time" + time;
+
+        if(time === 0) {
+           clearInterval(timer);
+           showScore();
+        }
+    }, 1000);
+    Quiz.style.display = "block";
+}
+
+function showScore() {
+    Quiz.style.display = "none";
+    gameOver.style.display = "flex";
+    clearInterval(timer);
+    highScoreDisplayName.value = "";
+    Score.innerHTML = "You got" + score + " out of" + Questions.length + " correct!";
 }
 
 
