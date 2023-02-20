@@ -89,7 +89,7 @@ function generateQuestion(){
     buttonC.innerHTML = currentQuestion.optionC;
     buttonD.innerHTML = currentQuestion.optionD;
 }
-
+// Here we have the start quiz function which will also controls the timer on the screen, make the "startButton" go away after being clicked. Then it'll display our first question
 function startQuiz(){
     gameOver.style.display = "none";
     beginQuiz.style.display = "none";
@@ -106,7 +106,7 @@ function startQuiz(){
     }, 1000);
     Quiz.style.display = "block";
 }
-
+// Here we have the score being showcased on our website after the quiz being completed or times runs out 
 function showScore() {
     Quiz.style.display = "none";
     gameOver.style.display = "flex";
@@ -114,7 +114,7 @@ function showScore() {
     highScoreDisplayName.value = "";
     Score.innerHTML = "You got" + score + " out of" + Questions.length + " correct!";
 }
-
+// This function checks answer the user chooses
 function checkAnswer(answer){
     correct = Questions[currentQuestion].correctAnswer;
 
@@ -132,8 +132,8 @@ function checkAnswer(answer){
         showScore
     }
     }
-
-    submitScorebutton.addEventListener("click", function highScore(){
+//Once the submitScoreButton is clicked here it'll save the users highscore in the local storage along with display any previous users highscore 
+submitScorebutton.addEventListener("click", function highScore(){
 
         
         if(highScoreDisplayName.value === "") {
@@ -159,6 +159,4 @@ function checkAnswer(answer){
         }
 
     });
-
-
 
