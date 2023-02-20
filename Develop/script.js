@@ -7,6 +7,14 @@ var quizTimer = document.getElementById("timer");
 var startQuiz = document.getElementById("startButton");
 var beginQuiz = document.getElementById("startQuiz");
 var highScoreCont = document.getElementById("highScoreContainer");
+var highScoreDiv = document.getElementById("high-score");
+var  highScoreDisplayName = document.getElementById("highScore-intials");
+var endGameButtons = document.getElementById("endGameButtons");
+var DisplayScore = document.getElementById("highScore-score");
+var buttonA = document.getElementById("A")
+var buttonB = document.getElementById("B")
+var buttonC = document.getElementById("C")
+var buttonD = document.getElementById("D")
 
 
 // Here I'm gathering my questions for the quiz on my website
