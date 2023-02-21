@@ -1,3 +1,25 @@
 :root{
     background-color: #ae86b5;
 }
+
+li{
+    padding-bottom: 1px;
+    color: floralwhite;
+    text-shadow: 1.5px 1px 3px black;
+    list-style-type: none;
+}
+
+p{
+    color: black;
+    text-shadow: .5px .5px white;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -.5rem;
+}
+input{
+    text-align: center;
+}
