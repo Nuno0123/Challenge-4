@@ -95,4 +95,51 @@ input{
     background: aquamarine;
 }
 
+#highscore-header{
+    display:flex;
+    justify-content: space-around;
+    border-bottom-style: outset;
+    margin-bottom: .5rem;
+    background-color: #52bca9;
+    color: #eeeeee;
+    font-family: 'Times New Roman', Times, serif;
+}
 
+#highScoreContainer{
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+#name{
+    margin: .5rem;
+    height: 1.75rem;
+}
+
+#highScoreNameInput{
+    display: inline-block;
+    padding-left: 9.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#highScore-score{
+    float: right;
+    padding-right: 8.75rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#finalScore{
+    padding-bottom: 0.5rem;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#endGameButton{
+    display: none;
+}
