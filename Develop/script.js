@@ -26,42 +26,42 @@ var Questions = [{
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"C"},
- {
+    {
     Question: "",
     optionA:"answer",
     optionB:"answer",
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"B"},
-{
+    {
     Question: "",
     optionA:"answer",
     optionB:"answer",
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"A"},
-{
+    {
     Question: "",
     optionA:"answer",
     optionB:"answer",
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"A"},
-{
+    {
     Question: "",
     optionA:"answer",
     optionB:"answe",
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"C"},
-{   
+    {   
     Question: "",
     optionA:"answer",
     optionB:"answer",
     optionC:"answer",
     optionD:"answer",
     correctAnswer:"B"},
-{
+    {
     Question: "",
     optionA:"answer",
     optionB:"answer",
@@ -81,14 +81,14 @@ function generateQuestion(){
     gameOver.style.display = "none";
     if (currentQuestion === finalQuestion){
         return showScore();
-    }
+    } 
     var currentQuestion = Questions[currentQuestion];
-    problema.innerHTML = "<p>" + currentQuestion.question + "</p>";
+    problema.innerHTML = "<p>" + currentQuestion + "</p>";
     buttonA.innerHTML = currentQuestion.optionA;
     buttonB.innerHTML = currentQuestion.optionB;
     buttonC.innerHTML = currentQuestion.optionC;
     buttonD.innerHTML = currentQuestion.optionD;
-}
+};
 // Here we have the start quiz function which will also controls the timer on the screen, make the "startButton" go away after being clicked. Then it'll display our first question
 function startQuiz(){
     gameOver.style.display = "none";
@@ -104,7 +104,7 @@ function startQuiz(){
            showScore();
         }
     }, 1000);
-    Quiz.style.display = "block";
+   Quiz.style.display = "block";
 }
 // Here we have the score being showcased on our website after the quiz has been completed or times runs out 
 function showScore() {
@@ -119,43 +119,44 @@ function checkAnswer(answer){
     correct = Questions[currentQuestion].correctAnswer;
 
     if (answer === correct && currentQuestion !== finalQuestion){
-        score++;
-        alert("Correct!");
+        Score++;
+        alert("That Is Correct!");
         currentQuestion++;
         generateQuestion();
+       
     }else if (answer !== correct && currentQuestion !== finalQuestion){
-        alert("Incorrect!")
+        alert("That Is Incorrect.")
         currentQuestion++;
         generateQuestion();
-
+        
     }else{
-        showScore
+        showScore();
     }
-    }
+}
 //Once the submitScoreButton is clicked here it'll save the users highscore in the local storage along with display any previous users highscore 
-submitScorebutton.addEventListener("click", function highScore(){
+submitScorebutton.addEventListener("click", function highscore(){
 
         
-        if(highScoreDisplayName.value === "") {
-            alert("Name cannot be blank");
-            return false;
-        }else{
-            var savedHighScores = JSON.parse(localStorage.getItem("savedHighsScores")) || [];
-            var currentUser = highScoreDisplayName.value.trim();
-            var currentHighScore = {
-                name : currentUser,
-                score : Score
-            };
+    if(highScoreDisplayName.value === "") {
+        alert("Name cannot be blank");
+        return false;
+    }else{
+        var savedHighScores = JSON.parse(localStorage.getItem("savedHighsScores")) || [];
+        var currentUser = highScoreDisplayName.value.trim();
+        var currentHighScore = {
+            name : currentUser,
+            score : Score
+        };
     
-            gameOver.style.display = "none";
-            highScoreCont.style.display = "flex";
-            highScoreDiv.style.display = "block";
-            endGameButton.style.display = "flex";
+        gameOver.style.display = "none";
+        highScoreCont.style.display = "flex";
+        highScoreDiv.style.display = "block";
+        endGameButton.style.display = "flex";
     
-            savedHighScores.push(currentHighScore);
-            localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores)); 
-            generateHighScores();
-        }
+        savedHighScores.push(currentHighScore);
+        localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores)); 
+        generateHighScores();
+    }  
 
 });
 // Here this function will be for generating a new list in the local storage on the webpage 
@@ -194,3 +195,5 @@ function replay(){
     currentQuestion = 0;
 }
 
+
+startQuizButton.addEventListeners("click",startQuiz);
