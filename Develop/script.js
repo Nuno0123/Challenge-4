@@ -14,62 +14,62 @@ var highScoreName = document.getElementById("name");
 var endGameButton = document.getElementById("endGameButton");
 var DisplayScore = document.getElementById("highScore-score");
 var submitScorebutton = document.getElementById("submiteScore");
-var buttonA = document.getElementById("A")
-var buttonB = document.getElementById("B")
-var buttonC = document.getElementById("C")
-var buttonD = document.getElementById("D")
+var buttonA = document.getElementById("a")
+var buttonB = document.getElementById("b")
+var buttonC = document.getElementById("c")
+var buttonD = document.getElementById("d")
 // Here I'm gathering my questions for the quiz on my website
 var Questions = [{
-    Question: "What does DOM stand for?",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"C"},
+    question: "What does DOM stand for?",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "c"},
     {
-    Question: "",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"B"},
+    question: "",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "b"},
     {
-    Question: "",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"A"},
+    question: "",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "a"},
     {
-    Question: "",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"A"},
+    question: "",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "a"},
     {
-    Question: "",
-    optionA:"answer",
-    optionB:"answe",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"C"},
+    question: "",
+    optionA: "answer",
+    optionB: "answe",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "c"},
     {   
-    Question: "",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"B"},
+    question: "",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "b"},
     {
-    Question: "",
-    optionA:"answer",
-    optionB:"answer",
-    optionC:"answer",
-    optionD:"answer",
-    correctAnswer:"B"},      
-]
-
+    question: "",
+    optionA: "answer",
+    optionB: "answer",
+    optionC: "answer",
+    optionD: "answer",
+    correctAnswer: "b"},      
+    
+    ];
 var finalQuestion = Questions.length;
 var currentQuestion = 0;
 var time = 100;
@@ -83,7 +83,7 @@ function generateQuestion(){
         return showScore();
     } 
     var currentQuestion = Questions[currentQuestion];
-    problema.innerHTML = "<p>" + currentQuestion + "</p>";
+    problema.innerHTML = "<p>" + currentQuestion.questions + "</p>";
     buttonA.innerHTML = currentQuestion.optionA;
     buttonB.innerHTML = currentQuestion.optionB;
     buttonC.innerHTML = currentQuestion.optionC;
@@ -107,31 +107,12 @@ function startQuiz(){
    Quiz.style.display = "block";
 }
 // Here we have the score being showcased on our website after the quiz has been completed or times runs out 
-function showScore() {
+function showScore(){
     Quiz.style.display = "none";
     gameOver.style.display = "flex";
     clearInterval(timer);
     highScoreDisplayName.value = "";
     Score.innerHTML = "You got" + Score + " out of" + Questions.length + " correct!";
-}
-// This function checks answer the user chooses
-function checkAnswer(answer){
-    correct = Questions[currentQuestion].correctAnswer;
-
-    if (answer === correct && currentQuestion !== finalQuestion){
-        Score++;
-        alert("That Is Correct!");
-        currentQuestion++;
-        generateQuestion();
-       
-    }else if (answer !== correct && currentQuestion !== finalQuestion){
-        alert("That Is Incorrect.")
-        currentQuestion++;
-        generateQuestion();
-        
-    }else{
-        showScore();
-    }
 }
 //Once the submitScoreButton is clicked here it'll save the users highscore in the local storage along with display any previous users highscore 
 submitScorebutton.addEventListener("click", function highscore(){
@@ -145,7 +126,7 @@ submitScorebutton.addEventListener("click", function highscore(){
         var currentUser = highScoreDisplayName.value.trim();
         var currentHighScore = {
             name : currentUser,
-            score : Score
+            Score : Score
         };
     
         gameOver.style.display = "none";
@@ -159,6 +140,7 @@ submitScorebutton.addEventListener("click", function highscore(){
     }  
 
 });
+
 // Here this function will be for generating a new list in the local storage on the webpage 
 function generateHighScores(){
     highScoreDisplayName.innerHTML = "";
@@ -193,6 +175,26 @@ function replay(){
     time = 100;
     points = 0;
     currentQuestion = 0;
+}
+
+// This function checks answer the user chooses
+function checkAnswer(answer){
+    correct = Questions[currentQuestion].correctAnswer;
+
+    if (answer === correct && currentQuestion !== finalQuestion){
+        Score++;
+        alert("That Is Correct!");
+        currentQuestion++;
+        generateQuestion();
+       
+    }else if (answer !== correct && currentQuestion !== finalQuestion){
+        alert("That Is Incorrect.")
+        currentQuestion++;
+        generateQuestion();
+        
+    }else{
+        showScore();
+    }
 }
 
 
