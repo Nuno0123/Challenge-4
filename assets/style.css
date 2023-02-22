@@ -39,7 +39,6 @@ input{
     background-color: #52bca9;
     border-radius: 10px;
     border: 3px double #c09f9f;
-    color: #eeeeee;
     text-align: center;
     font-size: 15px;
     padding: 20px;
@@ -101,11 +100,10 @@ input{
     border-bottom-style: outset;
     margin-bottom: .5rem;
     background-color: #52bca9;
-    color: #eeeeee;
     font-family: 'Times New Roman', Times, serif;
 }
 
-#highScoreContainer{
+#highscoreContainer{
     height: 100%;
     width: 100%;
     display: none;
@@ -119,7 +117,7 @@ input{
     height: 1.75rem;
 }
 
-#highScoreNameInput{
+#highscoreNameInput{
     display: inline-block;
     padding-left: 9.5rem;
     font-family: 'Times New Roman', Times, serif;
