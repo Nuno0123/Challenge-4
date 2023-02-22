@@ -23,6 +23,7 @@ For this week's challenge I'm expected to create a webpage that contains a timed
 * Created generate question function to keep the questions back to back after each one is anwered
 * Created ccs to make website more appealing 
 * Once all questions are completed or the timer reaches 0 the quiz is offically over
+* Added time subtration by 10 seconds for every wrong answer
 * Added comments to best explain my work
 ## Website 
 

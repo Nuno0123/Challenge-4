@@ -196,12 +196,13 @@ function checkAnswer(answer){
 
     if (answer === correct && currentQuizQuestion !== finalQuestion){
         points++;
-        alert("That Is Correct!");
+        alert("Correct!");
         currentQuizQuestion++;
         generateQuizQuestion();
     
 }else if (answer !== correct && currentQuizQuestion !== finalQuestion){
-        alert("That Is Incorrect.")
+        alert("Incorrect.")
+        time = time - 10;
         currentQuizQuestion++;
         generateQuizQuestion();
         
